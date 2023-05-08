@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &311785860929133086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 311785860929133072}
+  - component: {fileID: 311785860929133073}
+  m_Layer: 0
+  m_Name: DialogAndQuestGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &311785860929133072
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311785860929133086}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 592.6362, y: -632.901, z: -213.80609}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &311785860929133073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311785860929133086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5875b177e0425f47b2046192c145c7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fileName: FirstQuest
+  folder: Russian
+  node:
+  - npcText: "\u041F\u0440\u0438\u0432\u0435\u0442 \u043F\u0443\u0442\u043D\u0438\u043A"
+    playerAnswer:
+    - text: "\u041A\u0430\u043A \u0434\u0435\u043B\u0430?"
+      exit: 0
+      toNode: 1
+      questValue: 0
+      questValueGreater: 0
+      questName: 
+      questStatus: 0
+    - text: "\u041D\u0430 \u0441\u0447\u0435\u0442 \u0437\u0430\u0434\u0430\u043D\u0438\u044F"
+      exit: 0
+      toNode: 2
+      questValue: 0
+      questValueGreater: 1
+      questName: FirstQuest
+      questStatus: 0
+    - text: "\u0415\u0441\u0442\u044C \u0420\u0430\u0431\u043E\u0442\u0435\u043D\u043A\u0430?"
+      exit: 0
+      toNode: 3
+      questValue: 0
+      questValueGreater: 0
+      questName: 
+      questStatus: 0
+    - text: "\u041F\u043E\u043A\u0430"
+      exit: 1
+      toNode: 1
+      questValue: 0
+      questValueGreater: 0
+      questName: 
+      questStatus: 0
+  - npcText: "\u041D\u0435\u043F\u043B\u043E\u0445\u043E"
+    playerAnswer:
+    - text: "\u041F\u043E\u043D\u044F\u0442\u043D\u043E"
+      exit: 0
+      toNode: 0
+      questValue: 0
+      questValueGreater: 0
+      questName: 
+      questStatus: 0
+    - text: "\u0418\u0434\u0438 \u0432 \u0436\u043E\u043F\u0443"
+      exit: 1
+      toNode: 1
+      questValue: 0
+      questValueGreater: 0
+      questName: 
+      questStatus: 0
+  - npcText: "\u0414\u0430, \u0447\u0442\u043E \u0441 \u0437\u0430\u0434\u0430\u043D\u0438\u0435\u043C?"
+    playerAnswer:
+    - text: "\u0412\u0441\u0435 \u0433\u043E\u0442\u043E\u0432\u043E"
+      exit: 0
+      toNode: 0
+      questValue: 2
+      questValueGreater: 0
+      questName: FirstQuest
+      questStatus: 3
+    - text: "\u0418\u0434\u0438 \u0432 \u0436\u043E\u043F\u0443"
+      exit: 1
+      toNode: 1
+      questValue: 0
+      questValueGreater: 0
+      questName: 
+      questStatus: 0
+  - npcText: "\u0414\u0430 \u043A\u043E\u043D\u0435\u0447\u043D\u043E, \u0432\u043E\u0437\u044C\u043C\u0435\u0448\u044C\u0441\u044F?"
+    playerAnswer:
+    - text: "\u0414\u0430 "
+      exit: 1
+      toNode: 0
+      questValue: 0
+      questValueGreater: 0
+      questName: FirstQuest
+      questStatus: 1
+    - text: "\u0418\u0434\u0438 \u0432 \u0436\u043E\u043F\u0443"
+      exit: 1
+      toNode: 1
+      questValue: 0
+      questValueGreater: 0
+      questName: 
+      questStatus: 0
