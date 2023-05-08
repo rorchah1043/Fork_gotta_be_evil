@@ -1,0 +1,26 @@
+<dialogue name="PickingQuest">
+  <node id="0" npcText="Привет путник">
+    <answer text="Как дела?" toNode="0" />
+    <answer text="Могу что-нибудь сделать для тебя?" toNode="1" questValue="0" questName="PickingQuest" />
+    <answer text="Грибы собраны" toNode="3" questStatus="3" questValue="3" questName="PickingQuest" />
+    <answer text="Грибы собраны" toNode="3" questStatus="3" questValue="4" questName="PickingQuest" />
+    <answer text="Обознался" exit="True" />
+  </node>
+  <node id="1" npcText="Да, у меня тут запасы грибов для рагу закончились, мог бы ты собрать и принести.">
+    <answer text="Да, одна нога тут другая грибы собирает" toNode="2" questStatus="1" questValue="0" questName="PickingQuest" />
+    <answer text="Не, я нарик что-ль" exit="True" />
+  </node>
+  <node id="2" npcText="Отлично, жду тебя">
+    <answer text="Жди" exit="True" />
+  </node>
+  <node id="3" npcText="Спасибо, как раз клиент наше фирменное рагу заказал">
+    <answer text="Да, не за что" toNode="4" questValue="3" questName="PickingQuest" />
+    <answer text="Да, не за что(EVIL)" toNode="5" questValue="4" questName="PickingQuest" />
+  </node>
+  <node id="4" npcText="Отличное вышло рагу от клиента даже благодарность поступила">
+    <answer text="Я очень рад" exit="True" />
+  </node>
+  <node id="5" npcText="Ты че грибы не умеешь отличать, проваливай">
+    <answer text="Пока" exit="True" />
+  </node>
+</dialogue>

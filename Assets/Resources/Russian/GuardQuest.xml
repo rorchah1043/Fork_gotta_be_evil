@@ -1,0 +1,9 @@
+<dialogue name="GuardQuest">
+  <node id="0" npcText="Я стражнЕк хочешь потренироваться">
+    <answer text="Да хочу" toNode="1" questStatus="1" questValue="0" questName="GuardQuest" />
+    <answer text="Гачемучник иди в жопу" exit="True" />
+  </node>
+  <node id="1" npcText="Отпизди манекен 5 раз">
+    <answer text="Гачемучник иди в жопу" exit="True" />
+  </node>
+</dialogue>
