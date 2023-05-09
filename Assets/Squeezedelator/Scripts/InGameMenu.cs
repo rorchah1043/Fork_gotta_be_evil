@@ -28,14 +28,14 @@ public class InGameMenu : MonoBehaviour
         }
         else if(Input.GetKeyDown(KeyCode.Escape) && _isPaused)
         {
-            PlayerController._canMove = true;
             ReturnToGame();
-            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 
     public void ReturnToGame()
     {
+        PlayerController._canMove = true;
+        Cursor.lockState = CursorLockMode.Locked;
         _isPaused = false;
         _pauseMenu.SetActive(false);
         Time.timeScale = 1f;

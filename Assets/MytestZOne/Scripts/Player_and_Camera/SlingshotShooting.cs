@@ -14,11 +14,12 @@ public class SlingshotShooting : MonoBehaviour
 
     const float powerConst = 10f;
 
+    private Animator _animator;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        _animator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -36,9 +37,11 @@ public class SlingshotShooting : MonoBehaviour
         {
             Trajectory.gameObject.SetActive(true);
             pressed = true;
+            StretchAnim();
         }
         if (Input.GetMouseButtonUp(0))
         {
+            ShootAnim();
             Trajectory.gameObject.SetActive(false);
             Shoot(power);
             pressed = false;
@@ -65,6 +68,21 @@ public class SlingshotShooting : MonoBehaviour
     {
         GameObject bullet = Instantiate(bulletPrefab, gunPos.transform.position, transform.rotation);
         bullet.GetComponent<Rigidbody>().AddForce(transform.forward * power, ForceMode.Impulse);
+    }
+
+    void StretchAnim()
+    {
+        _animator.SetTrigger("Stretch");
+    }
+
+
+    IEnumerator ShootAnim()
+    {
+        _animator.SetLayerWeight(_animator.GetLayerIndex("Attack"), 1);
+        _animator.SetTrigger("Shoot");
+
+        yield return new WaitForSeconds(0.2f);
+        _animator.SetLayerWeight(_animator.GetLayerIndex("Attack"), 0);
     }
 
 }
