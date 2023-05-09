@@ -100,12 +100,14 @@ public class PlayerController : MonoBehaviour
 
     private void Idle()
     {
-        _animator.SetFloat("Speed", 0, 0.1f, Time.deltaTime);
+        
+        _animator.SetFloat("Speed", 0f, 0.1f, Time.deltaTime);
+        
     }
 
     private void Walk()
     {
-        _animator.SetFloat("Speed", 0.2f, 0.1f, Time.deltaTime);
+        _animator.SetFloat("Speed", 0.3f, 0.1f, Time.deltaTime);
     }
 
     private void Run()

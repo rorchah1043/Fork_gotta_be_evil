@@ -5,10 +5,10 @@ using UnityEngine;
 public class StepAudio : MonoBehaviour
 {
     [SerializeField] private AudioClip[] audioStep;
-    [SerializeField] private AudioSource audioPlayer;
+    private AudioSource audioPlayer;
 
     void FootStep()
     {
-        GetComponentInParent<PlayerSound>().PlaySoundOneShot(audioStep[Random.Range(0, audioStep.Length)]);
+        GetComponentInParent<AudioSource>().PlayOneShot(audioStep[Random.Range(0, audioStep.Length)]);
     }
 }

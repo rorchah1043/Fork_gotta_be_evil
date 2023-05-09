@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WolfQuest : MonoBehaviour
 {
+    [SerializeField] GameObject _Player;
     public GameObject bringZone;
     public GameObject wolf;
     [SerializeField] GameObject _firstQuest;
@@ -73,6 +74,7 @@ public class WolfQuest : MonoBehaviour
         enabled = true;
         wolf.SetActive(true);
         bringZone.SetActive(true);
+        _Player.GetComponent<SoundMeee>().SetIsMeeSound();
         
     }
 
