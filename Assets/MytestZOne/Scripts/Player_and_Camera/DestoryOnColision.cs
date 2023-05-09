@@ -11,16 +11,21 @@ public class DestoryOnColision : MonoBehaviour
             Destroy(gameObject);
             other.gameObject.SetActive(false);
         }
-        if (other.CompareTag("Crow"))
+        else if (other.CompareTag("Crow"))
         {
             Destroy(gameObject);
             other.gameObject.SetActive(false);
         }
-        if (other.CompareTag("Wolf"))
+        else if (other.CompareTag("Wolf"))
         {
             Destroy(gameObject);
             other.GetComponent<WolfHP>().Damage();
         }
+        else if (other.CompareTag("Window"))
+        {
+            other.GetComponent<BreakableWindow>().ChangeMaterial();
+        }
+        
         Destroy(gameObject);
     }
 }
