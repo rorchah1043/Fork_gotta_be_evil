@@ -6,12 +6,14 @@ using UnityEngine.UI;
 
 public class KarmaManager : MonoBehaviour
 {
+    [SerializeField] AudioClip badDefaultAmbient;
     [SerializeField] private Slider _sliderRight;
     [SerializeField] private Slider _sliderLeft;
     private Slider _currentSlider;
     private float _sliderValue = 0;
     private static float _value = 0, _tmp = 0;
     private float _karmaValue = 0f;
+    private bool _badIsPlaing = false;
     
     // Start is called before the first frame update
     private void Start()
@@ -55,7 +57,22 @@ public class KarmaManager : MonoBehaviour
                 _currentSlider.value = 0;
                 _currentSlider = _sliderLeft;
             }
+
+
+            if (_sliderValue <= 0 && _badIsPlaing)
+            {
+                AroundMusicManager.instance.PlayGood();
+                _badIsPlaing = !_badIsPlaing;
+                Debug.Log("Yeees");
+            }
+            if (_sliderValue > 0 && !_badIsPlaing)
+            {
+                AroundMusicManager.instance.PlayBad();
+                _badIsPlaing = !_badIsPlaing;
+                Debug.Log("NOOOO");
+            }
         }
+
     }
 
     private bool CheckCurrent()
