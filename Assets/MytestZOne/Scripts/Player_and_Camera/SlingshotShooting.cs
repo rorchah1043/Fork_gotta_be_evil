@@ -7,6 +7,10 @@ public class SlingshotShooting : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private GameObject gunPos;
     [SerializeField] private TrajectoryRenderer Trajectory;
+    [SerializeField] private AudioClip _stretchAudio;
+    [SerializeField] private AudioClip _shootAudio;
+    [SerializeField] private bool _isReadyToShoot = true;
+    [SerializeField] private Animator boy;
 
     private bool pressed;
     
@@ -19,13 +23,13 @@ public class SlingshotShooting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _animator = GetComponentInChildren<Animator>();
+        _animator = boy.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (PlayerController._canMove)
+        if (PlayerController._canMove && _isReadyToShoot)
         {
             CheckPress();
         }
@@ -35,18 +39,21 @@ public class SlingshotShooting : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            StretchAnim();
             Trajectory.gameObject.SetActive(true);
             pressed = true;
-            StretchAnim();
+            GetComponent<AudioSource>().PlayOneShot(_stretchAudio, 0.5f);
         }
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && pressed)
         {
             ShootAnim();
+            GetComponent<AudioSource>().PlayOneShot(_shootAudio, 0.5f);
             Trajectory.gameObject.SetActive(false);
             Shoot(power);
             pressed = false;
             power = powerConst;
-            
+            _isReadyToShoot = false;
+            StartCoroutine(WaitToShoot());
         }
 
         if (pressed)
@@ -72,17 +79,21 @@ public class SlingshotShooting : MonoBehaviour
 
     void StretchAnim()
     {
-        _animator.SetTrigger("Stretch");
+        _animator.SetLayerWeight(_animator.GetLayerIndex("Attack Layer"), 1);
+        _animator.SetBool("Stretch", true);
+    }
+
+    void ShootAnim()
+    {
+        _animator.SetLayerWeight(_animator.GetLayerIndex("Attack Layer"), 0);
+        _animator.SetBool("Stretch", false);
     }
 
 
-    IEnumerator ShootAnim()
+    IEnumerator WaitToShoot()
     {
-        _animator.SetLayerWeight(_animator.GetLayerIndex("Attack"), 1);
-        _animator.SetTrigger("Shoot");
-
-        yield return new WaitForSeconds(0.2f);
-        _animator.SetLayerWeight(_animator.GetLayerIndex("Attack"), 0);
+        yield return new WaitForSeconds(2);
+        _isReadyToShoot = true;
     }
 
 }

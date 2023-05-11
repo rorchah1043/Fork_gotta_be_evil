@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class FirstQuest : MonoBehaviour
 {
+    //[SerializeField] AudioClip _podskazka;
+    //[SerializeField] AudioSource _player;
+    [SerializeField] KarmaManager karma;
     public GameObject[] chicken;
     public GameObject[] crow;
     private static int _value, _tmp, _tmpBad;
@@ -86,6 +89,7 @@ public class FirstQuest : MonoBehaviour
        
         _value = 1; // квест активен
         enabled = true;
+        //_player.PlayOneShot(_podskazka);
         foreach (GameObject obj in crow)
         {
             obj.SetActive(true);
@@ -109,12 +113,12 @@ public class FirstQuest : MonoBehaviour
         }
         if(_value == 2)
         {
-            KarmaManager.Test(20);
+            karma.ChangeKarma(30);
             _value = 665;
         }
         if(_value == 3)
         {
-            KarmaManager.Test(-20);
+            karma.ChangeKarma(-30);
             _value = 777;
         }
         enabled = false;

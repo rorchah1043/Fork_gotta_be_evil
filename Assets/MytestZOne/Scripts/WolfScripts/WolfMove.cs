@@ -26,7 +26,6 @@ public class WolfMove : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && !_isAgred && (Vector3.Distance(transform.position, _player.position) < 20))
         {
             _bot.SetDestination(_player.position);
-            _player.GetComponent<SoundMeee>().PlaySound();
         }
         if(_bringToZone && _bringToZone)
         {

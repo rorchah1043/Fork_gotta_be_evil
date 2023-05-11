@@ -8,6 +8,7 @@ public class BreakableWindow : MonoBehaviour
     [SerializeField] private Material _brokenGlassMaterial;
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip[] _audioClips;
+    [SerializeField] private KarmaManager _karma;
  
     private bool _isBroken = false;
 
@@ -20,7 +21,8 @@ public class BreakableWindow : MonoBehaviour
     {
         if (!_isBroken)
         {
-             _meshRenderer.material = _brokenGlassMaterial;
+            _karma.ChangeKarma(5);
+            _meshRenderer.material = _brokenGlassMaterial;
              _audioSource.Play();
             _isBroken = true;
         }
