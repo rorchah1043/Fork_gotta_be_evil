@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 2588.751, g: 9504.977, b: 16415.484, a: 1}
+  m_IndirectSpecularColor: {r: 2586.7402, g: 9490.559, b: 16405.297, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -51726,10 +51726,10 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7230853127979452299, guid: b40529ad7374443628850f8a2e8a88fe, type: 3}
   gunPos: {fileID: 1564496261333014528}
   Trajectory: {fileID: 1564496262785421600}
-  _stretchAudio: {fileID: 0}
-  _shootAudio: {fileID: 0}
+  _stretchAudio: {fileID: 8300000, guid: 2ef041dd19e8b4778937d395d722d07b, type: 3}
+  _shootAudio: {fileID: 8300000, guid: d059664d9974b49aca81c8128a33c831, type: 3}
   _isReadyToShoot: 1
-  boy: {fileID: 0}
+  boy: {fileID: 5689616018136223591}
 --- !u!82 &1564496262475476026
 AudioSource:
   m_ObjectHideFlags: 0
@@ -52851,7 +52851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8365c0cdeab2d42d6ac02b3d87278d3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  karma: {fileID: 0}
+  karma: {fileID: 3844325892425790063}
   chicken:
   - {fileID: 6109794184125232745}
   - {fileID: 6109794183380313437}
@@ -55156,7 +55156,7 @@ MonoBehaviour:
   bringZone: {fileID: 3314118252768412984}
   wolf: {fileID: 6109794182304328343}
   _firstQuest: {fileID: 2013997920549043354}
-  _podskazka: {fileID: 0}
+  _podskazka: {fileID: 8300000, guid: 57e850f280107483c94c52184e6a0c76, type: 3}
   _GetItemCanvas: {fileID: 0}
 --- !u!4 &3314118251704877172
 Transform:
@@ -58040,7 +58040,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -37.89997, y: 0.2381897}
+  m_AnchoredPosition: {x: -37.89997, y: 0.23815918}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &3844325892401989677
