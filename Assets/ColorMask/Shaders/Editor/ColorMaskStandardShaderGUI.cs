@@ -95,7 +95,8 @@ internal class ColorMaskStandardShaderGUI : ShaderGUI
 
 	MaterialEditor m_MaterialEditor;
 	WorkflowMode m_WorkflowMode = WorkflowMode.Specular;
-	ColorPickerHDRConfig m_ColorPickerHDRConfig = new ColorPickerHDRConfig(0f, 99f, 1/99f, 3f);
+        [Obsolete]
+        ColorPickerHDRConfig m_ColorPickerHDRConfig = new ColorPickerHDRConfig(0f, 99f, 1/99f, 3f);
 
 	bool m_FirstTimeApply = true;
 
@@ -140,7 +141,8 @@ internal class ColorMaskStandardShaderGUI : ShaderGUI
 		uvSetSecondary = FindProperty ("_UVSec", props);
 	}
 
-	public override void OnGUI (MaterialEditor materialEditor, MaterialProperty[] props)
+        [Obsolete]
+        public override void OnGUI(MaterialEditor materialEditor, MaterialProperty[] props)
 	{
 		FindProperties (props); // MaterialProperties can be animated so we do not cache them but fetch them every event to ensure animated values are updated correctly
 		m_MaterialEditor = materialEditor;
@@ -158,7 +160,8 @@ internal class ColorMaskStandardShaderGUI : ShaderGUI
 		ShaderPropertiesGUI (material);
 	}
 
-	public void ShaderPropertiesGUI (Material material)
+        [Obsolete]
+        public void ShaderPropertiesGUI (Material material)
 	{
 		// Use default labelWidth
 		EditorGUIUtility.labelWidth = 0f;
@@ -291,7 +294,8 @@ internal class ColorMaskStandardShaderGUI : ShaderGUI
 		m_MaterialEditor.ColorProperty(alphaColor, "Alpha Color");
 	}
 
-	void DoEmissionArea(Material material)
+        [Obsolete]
+        void DoEmissionArea(Material material)
 	{
 		bool showHelpBox = !HasValidEmissiveKeyword(material);
 		
