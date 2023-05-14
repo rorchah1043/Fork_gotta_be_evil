@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 2588.751, g: 9504.977, b: 16415.484, a: 1}
+  m_IndirectSpecularColor: {r: 2586.7402, g: 9490.559, b: 16405.297, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -63879,7 +63879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8365c0cdeab2d42d6ac02b3d87278d3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  karma: {fileID: 0}
+  karma: {fileID: 3844325892425790063}
   chicken:
   - {fileID: 6109794184125232745}
   - {fileID: 6109794183380313437}
