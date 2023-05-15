@@ -51,9 +51,7 @@ public class CityWalk : MonoBehaviour //don't forget to change the script name i
 
     private IEnumerator WaitRandomly(Vector3 point)
     {
-        yield return new WaitForSeconds(Random.Range(1, 8));
+        yield return new WaitForSeconds(Random.Range(Random.Range(1,3), 8));
         _agent.SetDestination(point);
     }
-
-
 }
