@@ -8,6 +8,11 @@ public class GlobalTimer : MonoBehaviour
 {
     public static event Action OnTimeEvent;
     [SerializeField] private float _multiplier = 1f;
+    [SerializeField] private AudioSource _player;
+    [SerializeField] private AudioClip _audio1;
+    [SerializeField] private AudioClip _audio2;
+    [SerializeField] private AudioClip _audio3;
+    [SerializeField] private AudioClip _audio4;
 
     private int _pointer = 0;
 
@@ -24,25 +29,25 @@ public class GlobalTimer : MonoBehaviour
             transform.Rotate(0,0,-Time.deltaTime * _multiplier);
             if (transform.rotation.eulerAngles.z < 270 && _pointer == 0)
             {
-                Debug.Log("1 pred");
+                _player.PlayOneShot(_audio1);
                 OnTimeEvent?.Invoke();
                 _pointer++;
             }
             else if (transform.rotation.eulerAngles.z < 180 && _pointer == 1)
             {
-                Debug.Log("2 pred");
+                _player.PlayOneShot(_audio2);
                 OnTimeEvent?.Invoke();
                 _pointer++;
             }
             else if (transform.rotation.eulerAngles.z < 90 && _pointer == 2)
             {
-                Debug.Log("3 pred");
+                _player.PlayOneShot(_audio3);
                 OnTimeEvent?.Invoke();
                 _pointer++;
             }
             else if (transform.rotation.eulerAngles.z < 30 && _pointer == 3)
             {
-                Debug.Log("4 pred");
+                _player.PlayOneShot(_audio4);
                 OnTimeEvent?.Invoke();
                 _pointer++;
             }

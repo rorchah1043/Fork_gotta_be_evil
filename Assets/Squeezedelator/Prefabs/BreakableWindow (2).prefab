@@ -117,6 +117,7 @@ MonoBehaviour:
   _audioClips:
   - {fileID: 8300000, guid: f73692e172884fb4496f6349e947e5b5, type: 3}
   - {fileID: 8300000, guid: 1b81487b231d4a340b44a4ba6026463f, type: 3}
+  _karma: {fileID: 3751874397053264022, guid: 07e93ed933621420fba0b2fc4c582716, type: 3}
 --- !u!82 &2251110332484653576
 AudioSource:
   m_ObjectHideFlags: 0

@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-
+            
             if (Input.GetButton("Jump") && _canMove)
             {
                 Jump();

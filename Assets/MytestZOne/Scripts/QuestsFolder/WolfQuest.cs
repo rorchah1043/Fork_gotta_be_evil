@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class WolfQuest : MonoBehaviour
 {
+    [SerializeField] GameObject _shapka;
     [SerializeField] GameObject _Player;
-    public GameObject bringZone;
-    public GameObject wolf;
+    [SerializeField] KarmaManager karma;
+    [SerializeField] GameObject bringZone;
+    [SerializeField] GameObject wolf;
     [SerializeField] GameObject _firstQuest;
-    
+    [SerializeField] AudioClip _podskazka;
+    [SerializeField] GameObject _GetItemCanvas;
     private static int _value;
 
     private static WolfQuest _internal;
@@ -62,13 +65,14 @@ public class WolfQuest : MonoBehaviour
             case QuestManager.Status.Disable:
                 ResetQuest();
                 break;
-            
-
         }
     }
 
     void SetActiveQuest()
     {
+        _GetItemCanvas.SetActive(true);
+        _shapka.SetActive(true);
+        _Player.GetComponent<AudioSource>().PlayOneShot(_podskazka);
         _firstQuest.GetComponent<FirstQuest>().SetInActive();
         _value = 1; // квест активен
         enabled = true;
@@ -83,14 +87,14 @@ public class WolfQuest : MonoBehaviour
         
         if(_value == 3)
         {
-            
-            KarmaManager.Test(-30);
+
+            karma.ChangeKarma(-30);
             _value = 777;
             
         }
         if(_value == 4)
         {
-            KarmaManager.Test(30);
+            karma.ChangeKarma(30);
             _value = 666;
             
         }
